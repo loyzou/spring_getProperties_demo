@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="locations">  
+            <list>  
+                <value>classpath*:sufow.properties</value>  
+            </list>  
+        </property>  
+    </bean> 
+	
+	<bean id="sufow" class="com.sufow.test.Sufow">
+		<property name="username">
+			<value>${username}</value>
+		</property>
+		<property name="age" >
+			<value>${age}</value>
+		</property>
+		<property name="gender" >
+			<value>${gender}</value>
+		</property>
+		<property name="address" >
+			<value>${address}</value>
+		</property>
+	</bean>
+
+</beans>
